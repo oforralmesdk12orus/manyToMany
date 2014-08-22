@@ -13,3 +13,13 @@ Mesd\ManyToManyBundle\Entity\Person:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+    manyToMany:
+        thing:
+            targetEntity: Thing
+            inversedBy: person
+            joinTable:
+                name: person__thing
+                joinColumns:
+                    person_id: ~
+                inverseJoinColumns:
+                    thing_id: ~

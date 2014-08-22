@@ -19,6 +19,18 @@ class Thing
      */
     private $name;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $person;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->person = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -51,5 +63,38 @@ class Thing
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Add person
+     *
+     * @param \Mesd\ManyToManyBundle\Entity\Person $person
+     * @return Thing
+     */
+    public function addPerson(\Mesd\ManyToManyBundle\Entity\Person $person)
+    {
+        $this->person[] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Remove person
+     *
+     * @param \Mesd\ManyToManyBundle\Entity\Person $person
+     */
+    public function removePerson(\Mesd\ManyToManyBundle\Entity\Person $person)
+    {
+        $this->person->removeElement($person);
+    }
+
+    /**
+     * Get person
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPerson()
+    {
+        return $this->person;
     }
 }

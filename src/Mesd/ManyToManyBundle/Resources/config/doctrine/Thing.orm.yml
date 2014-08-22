@@ -13,3 +13,7 @@ Mesd\ManyToManyBundle\Entity\Thing:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+    manyToMany:
+        person:
+            targetEntity: Person
+            mappedBy: thing
