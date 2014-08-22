@@ -1,0 +1,30 @@
+person:
+    path:     /
+    defaults: { _controller: "MesdManyToManyBundle:Person:index" }
+
+person_show:
+    path:     /{id}/show
+    defaults: { _controller: "MesdManyToManyBundle:Person:show" }
+
+person_new:
+    path:     /new
+    defaults: { _controller: "MesdManyToManyBundle:Person:new" }
+
+person_create:
+    path:     /create
+    defaults: { _controller: "MesdManyToManyBundle:Person:create" }
+    requirements: { _method: post }
+
+person_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MesdManyToManyBundle:Person:edit" }
+
+person_update:
+    path:     /{id}/update
+    defaults: { _controller: "MesdManyToManyBundle:Person:update" }
+    requirements: { _method: post|put }
+
+person_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MesdManyToManyBundle:Person:delete" }
+    requirements: { _method: post|delete }

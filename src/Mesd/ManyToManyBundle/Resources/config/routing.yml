@@ -1,3 +1,11 @@
 mesd_many_to_many_homepage:
     path:     /hello/{name}
     defaults: { _controller: MesdManyToManyBundle:Default:index }
+
+MesdManyToManyBundle_person:
+    resource: "@MesdManyToManyBundle/Resources/config/routing/person.yml"
+    prefix:   /person
+
+MesdManyToManyBundle_thing:
+    resource: "@MesdManyToManyBundle/Resources/config/routing/thing.yml"
+    prefix:   /thing

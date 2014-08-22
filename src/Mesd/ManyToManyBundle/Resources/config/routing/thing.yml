@@ -1,0 +1,30 @@
+thing:
+    path:     /
+    defaults: { _controller: "MesdManyToManyBundle:Thing:index" }
+
+thing_show:
+    path:     /{id}/show
+    defaults: { _controller: "MesdManyToManyBundle:Thing:show" }
+
+thing_new:
+    path:     /new
+    defaults: { _controller: "MesdManyToManyBundle:Thing:new" }
+
+thing_create:
+    path:     /create
+    defaults: { _controller: "MesdManyToManyBundle:Thing:create" }
+    requirements: { _method: post }
+
+thing_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MesdManyToManyBundle:Thing:edit" }
+
+thing_update:
+    path:     /{id}/update
+    defaults: { _controller: "MesdManyToManyBundle:Thing:update" }
+    requirements: { _method: post|put }
+
+thing_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MesdManyToManyBundle:Thing:delete" }
+    requirements: { _method: post|delete }
