@@ -1,0 +1,3 @@
+mesd_many_to_many_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MesdManyToManyBundle:Default:index }

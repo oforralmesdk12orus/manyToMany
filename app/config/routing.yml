@@ -1,0 +1,4 @@
+mesd_many_to_many:
+    resource: "@MesdManyToManyBundle/Resources/config/routing.yml"
+    prefix:   /
+
