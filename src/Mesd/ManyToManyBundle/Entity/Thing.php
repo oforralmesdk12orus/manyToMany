@@ -32,10 +32,15 @@ class Thing
         $this->person = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -58,7 +63,7 @@ class Thing
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -73,6 +78,7 @@ class Thing
      */
     public function addPerson(\Mesd\ManyToManyBundle\Entity\Person $person)
     {
+        $person->addThing($this);
         $this->person[] = $person;
 
         return $this;
@@ -85,13 +91,14 @@ class Thing
      */
     public function removePerson(\Mesd\ManyToManyBundle\Entity\Person $person)
     {
+        $person->removeThing($this);
         $this->person->removeElement($person);
     }
 
     /**
      * Get person
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPerson()
     {

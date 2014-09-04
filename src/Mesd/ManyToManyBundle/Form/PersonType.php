@@ -16,10 +16,10 @@ class PersonType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('thing')
+            ->add('thing', null, array('required' => false))
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

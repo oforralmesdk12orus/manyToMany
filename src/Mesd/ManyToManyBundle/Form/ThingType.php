@@ -16,10 +16,10 @@ class ThingType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('person')
+            ->add('person', null, array('required' => false, 'by_reference' => false))
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
